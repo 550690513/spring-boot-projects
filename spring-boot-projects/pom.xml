@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!--spring-boot-projects聚合工程 父工程-->
+	<groupId>com.cheung</groupId>
+	<artifactId>spring-boot-projects</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging><!--注意是pom包-->
+
+	<modules>
+		<module>spring-boot-demo</module>
+	</modules>
+
+	<!--在父工程中添加 Spring Boot基础依赖,子工程直接依赖父工程即可-->
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.10.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<java-version>1.8</java-version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies></dependencies>
+	</dependencyManagement>
+
+</project>
