@@ -11,6 +11,8 @@
 
 	<modules>
 		<module>spring-boot-demo</module>
+		<module>spring-boot-filter</module>
+		<module>spring-boot-listener</module>
 	</modules>
 
 	<!--在父工程中添加 Spring Boot基础依赖,子工程直接依赖父工程即可-->
