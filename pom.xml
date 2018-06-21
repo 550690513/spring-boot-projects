@@ -17,6 +17,7 @@
 		<module>spring-boot-static-resources1</module>
 		<module>spring-boot-static-resources2</module>
 		<module>spring-boot-fileupload</module>
+		<module>spring-boot-view-jsp</module>
 	</modules>
 
 	<!--在父工程中添加 Spring Boot基础依赖,子工程直接依赖父工程即可-->
