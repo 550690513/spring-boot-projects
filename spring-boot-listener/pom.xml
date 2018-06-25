@@ -10,9 +10,9 @@
 
 
 	<parent>
-		<groupId>com.cheung</groupId>
-		<artifactId>spring-boot-projects</artifactId>
-		<version>1.0-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.10.RELEASE</version>
 	</parent>
 
 

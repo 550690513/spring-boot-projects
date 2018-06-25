@@ -8,20 +8,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging><!--Spring Boot项目打为jar包-->
 
-
-	<!--由于已经在父工程中添加了 Spring Boot基础依赖,此处直接依赖父工程即可-->
-	<!--<parent>
+	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.10.RELEASE</version>
-		<relativePath/>
-	</parent>-->
-	<parent>
-		<groupId>com.cheung</groupId>
-		<artifactId>spring-boot-projects</artifactId>
-		<version>1.0-SNAPSHOT</version>
 	</parent>
-
 
 	<dependencies>
 		<!--
