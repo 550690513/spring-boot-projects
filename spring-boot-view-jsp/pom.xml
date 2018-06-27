@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.cheung</groupId>
-	<artifactId>spring-boot-demo</artifactId>
+	<artifactId>spring-boot-view-jsp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging><!--Spring Boot项目打为jar包-->
 
@@ -17,17 +17,22 @@
 	</parent>
 
 	<dependencies>
-		<!--
-			注入Spring Boot的启动器:启动器其实就是一些jar包的集合.
-			Spring Boot共提供44种启动器,常见的有:
-				1.spring-boot-starter-web:支持全栈式web开发,包括tomcat和springMVC等jar包.
-				2.spring-boot-starter-jdbc:支持spring以jdbc方式操作数据库的jar包集合.
-				3.spring-boot-starter-redis:支持redis键值对存储的数据操作.
-				4. ....
-		-->
+		<!--Spring Boot的启动器-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+		<!-- jasper -->
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -36,5 +41,25 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/webapp</directory>
+				<!--注意此次必须要放在此目录下才能被访问到 -->
+				<targetPath>META-INF/resources</targetPath>
+				<includes>
+					<include>**/**</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
 
 </project>
