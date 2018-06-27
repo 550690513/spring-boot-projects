@@ -20,20 +20,21 @@ import java.util.*;
  * @author Cheung
  */
 @Controller
-public class DemoController {
+@RequestMapping("/info")
+public class InfoController {
 
 	@RequestMapping("/show")
 	public String showInfo(HttpServletRequest request, Model model) {
 		model.addAttribute("msg", "Thymeleaf 第一个案例");
 		model.addAttribute("key", new Date());
-		return "index";
+		return "info/show";
 	}
 
 	@RequestMapping("/show2")
 	public String showInfo2(Model model) {
 		model.addAttribute("sex", "女");
 		model.addAttribute("id", "1");
-		return "index2";
+		return "info/show2";
 	}
 
 	@RequestMapping("/show3")
@@ -43,7 +44,7 @@ public class DemoController {
 		list.add(new User(2, "李四", 22));
 		list.add(new User(3, "王五", 24));
 		model.addAttribute("list", list);
-		return "index3";
+		return "info/show3";
 	}
 
 	@RequestMapping("/show4")
@@ -53,7 +54,7 @@ public class DemoController {
 		map.put("u2", new User(2, "李四", 22));
 		map.put("u3", new User(3, "王五", 24));
 		model.addAttribute("map", map);
-		return "index4";
+		return "info/show4";
 	}
 
 	/**
@@ -73,7 +74,7 @@ public class DemoController {
 		// 存入ServletContext域对象
 		ServletContext servletContext = request.getSession().getServletContext();
 		servletContext.setAttribute("app", "ServletContextInfo_my");
-		return "index5";
+		return "info/show5";
 	}
 
 }

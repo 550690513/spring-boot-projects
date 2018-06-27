@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf-URL</title>
+</head>
+<body>
+	<!--
+	1.URL 表达式
+		th:href
+		th:src
+	2.url 表达式语法
+		基本语法：@{}
+	3.URL 类型
+		3.1 绝对路径
+			<a th:href="@{http://www.baidu.com}">绝对路径</a><br/>
+		3.2 相对路径
+			1)相对于当前项目的根
+				<a th:href="@{/show}">相对于当前项目的根路径</a>
+			2)相对于服务器路径的根
+				<a th:href="@{~/project2/resourcename}">相对于服务器的根路径</a>
+	-->
+	<a href="http://www.baidu.com">绝对路径(原始方式)</a><br/>
+	<a th:href="@{http://www.baidu.com}">绝对路径(Thymeleaf标签方式)</a>
+	<hr/>
+	<a th:href="@{/url/show}">相对路径</a>
+	<hr/>
+	<!--比如当前项目所在服务器下部署着project2的项目-->
+	<a th:href="@{~/project2/resourcename}">相对于服务器的根路径</a>
+	<hr/>
+	<!--在 url 中实现参数传递-->
+	<a th:href="@{/url/show(id=1,name=zhangsan)}">相对路径-传参</a>
+	<hr/>
+	<!--在 url 中通过 restful 风格进行参数传递-->
+	<a th:href="@{/path/{id}/show(id=1,name=zhangsan)}">相对路径-传参-restful</a>
+</body>
+</html>
