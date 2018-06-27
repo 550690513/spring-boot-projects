@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--
+		去request域对象中的值需要借助Thymeleaf内置对象:httpServletRequest
+	-->
+	Request取值:<span th:text="${#httpServletRequest.getAttribute('req')}"></span>
+	<hr/>
+	Session取值:<span th:text="${session.sess}"></span>
+	<hr/>
+	Application取值:<span th:text="${application.app}"></span>
+</body>
+</html>

@@ -20,6 +20,8 @@
 		<module>spring-boot-static-resources2</module>
 		<module>spring-boot-fileupload</module>
 		<module>spring-boot-view-jsp</module>
+		<module>spring-boot-view-freemarker</module>
+		<module>spring-boot-view-thymeleaf</module>
 	</modules>
 	
 </project>
