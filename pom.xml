@@ -22,6 +22,7 @@
 		<module>spring-boot-view-jsp</module>
 		<module>spring-boot-view-freemarker</module>
 		<module>spring-boot-view-thymeleaf</module>
+		<module>spring-boot-springmvc-mybatis</module>
 	</modules>
 	
 </project>
