@@ -16,7 +16,7 @@ import java.util.List;
  * @author Cheung
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("user")
 public class UserController {
 
 	@Autowired
@@ -28,7 +28,7 @@ public class UserController {
 	 * @param page
 	 * @return
 	 */
-	@RequestMapping(value = "/{page}", method = RequestMethod.GET)
+	@RequestMapping(value = "{page}", method = RequestMethod.GET)
 	public String toPage(@PathVariable String page) {
 		return page;
 	}
@@ -39,7 +39,7 @@ public class UserController {
 	 * @param model
 	 * @return
 	 */
-	@RequestMapping("/list")
+	@RequestMapping("list")
 	public String list(Model model) {
 		List<User> list = this.userService.queryAll();
 		model.addAttribute("list", list);
@@ -47,7 +47,7 @@ public class UserController {
 	}
 
 	/**
-	 * 添加用户
+	 * 添加用户接口
 	 *
 	 * @param user
 	 * @return
@@ -60,7 +60,7 @@ public class UserController {
 	}
 
 	/**
-	 * 根据id查询用户
+	 * 用户更新页
 	 *
 	 * @param id
 	 * @param model
@@ -74,7 +74,7 @@ public class UserController {
 	}
 
 	/**
-	 * 更新用户
+	 * 更新用户接口
 	 *
 	 * @param user
 	 * @return
@@ -87,7 +87,7 @@ public class UserController {
 	}
 
 	/**
-	 * 根据id删除用户
+	 * 根据id删除用户接口
 	 *
 	 * @param id
 	 * @return
