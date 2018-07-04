@@ -23,6 +23,12 @@
 		<module>spring-boot-view-freemarker</module>
 		<module>spring-boot-view-thymeleaf</module>
 		<module>spring-boot-springmvc-mybatis</module>
+		<module>spring-boot-validate</module>
+		<module>spring-boot-exception1</module>
+		<module>spring-boot-exception2</module>
+		<module>spring-boot-exception3</module>
+		<module>spring-boot-exception4</module>
+		<module>spring-boot-exception5</module>
 	</modules>
-	
+
 </project>
