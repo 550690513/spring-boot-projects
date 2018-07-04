@@ -29,6 +29,7 @@
 		<module>spring-boot-exception3</module>
 		<module>spring-boot-exception4</module>
 		<module>spring-boot-exception5</module>
+		<module>spring-boot-junit</module>
 	</modules>
 
 </project>
