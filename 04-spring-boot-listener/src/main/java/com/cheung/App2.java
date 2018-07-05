@@ -26,7 +26,7 @@ public class App2 {
 	 */
 	@Bean
 	public ServletListenerRegistrationBean<SecondListener> getServletListenerRegistrationBean() {
-		ServletListenerRegistrationBean<SecondListener> bean = new ServletListenerRegistrationBean<>(new SecondListener());
+		ServletListenerRegistrationBean<SecondListener> bean = new ServletListenerRegistrationBean<SecondListener>(new SecondListener());
 		return bean;
 	}
 

@@ -22,7 +22,7 @@ public class FileUploadController {
 
 	@RequestMapping("/fileUploadController")
 	public Map<String, Object> fileUpload(MultipartFile filename) throws IOException {
-		HashMap<String, Object> map = new HashMap<>();
+		HashMap<String, Object> map = new HashMap<String, Object>();
 
 		System.out.println(filename.getOriginalFilename());
 		filename.transferTo(new File("e:/" + filename.getOriginalFilename()));
