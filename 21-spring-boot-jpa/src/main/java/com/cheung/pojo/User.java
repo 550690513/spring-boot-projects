@@ -1,11 +1,6 @@
 package com.cheung.pojo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * @author Cheung
@@ -27,6 +22,18 @@ public class User {
 
 	@Column(name = "address")
 	private String address;
+
+
+	/**
+	 * 用户:角色   n:1
+	 *
+	 * @ManyToOne 指定了多对一的关系，fetch=FetchType.LAZY属性表示在多的那一方通过延迟加载的方式加载对象(默认不是延迟加载)
+	 * @JoinColumn 表示用多的一方来维护外键，外键名称为"role_id" (注意：如果我们不通过JoinColum来指定外键的名称，系统会给我们声明一个名称)
+	 */
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "role_id")
+	private Role role;
+
 
 	public User() {
 	}
@@ -69,6 +76,14 @@ public class User {
 		this.address = address;
 	}
 
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
 		return "User{" +
@@ -76,6 +91,7 @@ public class User {
 				", name='" + name + '\'' +
 				", age=" + age +
 				", address='" + address + '\'' +
+				", role=" + role +
 				'}';
 	}
 }
