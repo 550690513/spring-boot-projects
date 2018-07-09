@@ -34,6 +34,7 @@
 		<module>20-spring-boot-devtools</module>
 		<module>21-spring-boot-jpa</module>
 		<module>22-spring-boot-ehcache</module>
+		<module>23-spring-boot-redis</module>
 	</modules>
 
 </project>
