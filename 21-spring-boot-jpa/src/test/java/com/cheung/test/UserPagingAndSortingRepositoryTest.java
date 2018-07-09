@@ -3,7 +3,6 @@ package com.cheung.test;
 import com.cheung.App;
 import com.cheung.dao.UserPagingAndSortingRepository;
 import com.cheung.pojo.User;
-import jdk.management.resource.internal.inst.SocketOutputStreamRMHooks;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

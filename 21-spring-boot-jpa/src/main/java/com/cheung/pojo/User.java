@@ -3,10 +3,12 @@ package com.cheung.pojo;
 import javax.persistence.*;
 
 /**
+ * 用户 实体类
+ *
  * @author Cheung
  */
 @Entity// 实体类
-@Table(name = "user_jpa")// 表名
+@Table(name = "jpa_user")// 表名
 public class User {
 
 	@Id// 主键
@@ -27,10 +29,16 @@ public class User {
 	/**
 	 * 用户:角色   n:1
 	 *
-	 * @ManyToOne 指定了多对一的关系，fetch=FetchType.LAZY属性表示在多的那一方通过延迟加载的方式加载对象(默认不是延迟加载)
-	 * @JoinColumn 表示用多的一方来维护外键，外键名称为"role_id" (注意：如果我们不通过JoinColum来指定外键的名称，系统会给我们声明一个名称)
+	 * @ManyToOne 指定了多对一的关系，
+	 *          cascadeType.PERSIST：级联新增（又称级联保存）
+	 *          cascadeType.MERGE：级联合并（级联更新）
+	 *          cascadeType.REMOVE：级联删除
+	 *          cascadeType.REFRESH：级联刷新
+	 *          cascadeType.ALL：以上四种都是
+	 * @JoinColumn 表示用多的一方来维护外键，外键名称为"role_id"
+	 * (注意：如果我们不通过JoinColum来指定外键的名称，系统会给我们声明一个名称)
 	 */
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "role_id")
 	private Role role;
 
@@ -91,7 +99,6 @@ public class User {
 				", name='" + name + '\'' +
 				", age=" + age +
 				", address='" + address + '\'' +
-				", role=" + role +
 				'}';
 	}
 }
