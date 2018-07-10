@@ -23,7 +23,7 @@ public class QuartzConfig {
 	public JobDetailFactoryBean jobDetailFactoryBean() {
 		JobDetailFactoryBean jobDetailFactoryBean = new JobDetailFactoryBean();
 		// 关联自定义Job类
-		jobDetailFactoryBean.setJobClass(MyJob.class);
+		jobDetailFactoryBean.setJobClass(MyJob.class);// 注意：MyJob类的实例化是靠JobDetailFactoryBean来完成的。
 		return jobDetailFactoryBean;
 	}
 
@@ -72,10 +72,13 @@ public class QuartzConfig {
 	 * 3.2、创建Scheduler对象
 	 */
 	@Bean
-	public SchedulerFactoryBean schedulerFactoryBean(CronTriggerFactoryBean cronTriggerFactoryBean) {
+	public SchedulerFactoryBean schedulerFactoryBean(CronTriggerFactoryBean cronTriggerFactoryBean,MyAdaptableJobFactory myAdaptableJobFactory) {
 		SchedulerFactoryBean schedulerFactoryBean = new SchedulerFactoryBean();
 		// 关联Trigger对象
 		schedulerFactoryBean.setTriggers(cronTriggerFactoryBean.getObject());
+		// 重新设置JobFactoryBean为自定义的MyAdaptableJobFactory
+		// 让SchedulerFactoryBean去调用spring创建的MyAdaptableJobFactory，进而调用其重写后的createJobInstance()方法，完成将实例化的任务对象添加到springIOC容器，并且完成对象的注入
+		schedulerFactoryBean.setJobFactory(myAdaptableJobFactory);
 		return schedulerFactoryBean;
 	}
 
