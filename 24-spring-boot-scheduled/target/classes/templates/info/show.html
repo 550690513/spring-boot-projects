@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Thymeleaf入门</title>
+</head>
+<body>
+	<span th:text="Hello"></span>
+	<hr/>
+	<!--th:text在页面中输出值-->
+	<span th:text="${msg} "></span>
+	<hr/>
+	<!--th:value可以将一个值放入到 input 标签的 value 中-->
+	<input type="text" name="username" th:value="${msg}"/>
+	<hr/>
+	<!--
+		Thymeleaf 内置对象
+		注意语法：
+		1，调用内置对象一定要用#
+		2，大部分的内置对象都以 s 结尾 strings、numbers、dates
+	-->
+	<span th:text="${#strings.isEmpty(msg)}"></span>
+	<hr/>
+	<span th:text="${#strings.contains(msg,'9')}"></span>
+	<span th:text="${#strings.contains(msg,'T')}"></span>
+	<hr/>
+	<span th:text="${#strings.startsWith(msg,'a')}"></span>
+	<span th:text="${#strings.startsWith(msg,'T')}"></span>
+	<hr/>
+	<span th:text="${#strings.endsWith(msg,'a')}"></span>
+	<span th:text="${#strings.endsWith(msg,'案例')}"></span>
+	<hr/>
+	<span th:text="${#strings.length(msg)}"></span>
+	<hr/>
+	<span th:text="${#strings.indexOf(msg,'h')}"></span>
+	<hr/>
+	<span th:text="${#strings.substring(msg,13)}"></span>
+	<span th:text="${#strings.substring(msg,13,14)}"></span>
+	<hr/>
+	<span th:text="${#strings.toUpperCase(msg)}"></span>
+	<span th:text="${#strings.toLowerCase(msg)}"></span>
+	<hr/>
+	<!--格式化日期，默认的以浏览器默认语言为格式化标准-->
+	<span th:text="${#dates.format(key)}"></span>
+	<hr/>
+	<!--按照自定义的格式做日期转换-->
+	<span th:text="${#dates.format(key,'yyy/MM/dd')}"></span>
+	<hr/>
+	<!--
+		year：取年
+		Month：取月
+		Day：取日
+	-->
+	<span th:text="${#dates.year(key)}"></span>-
+	<hr/>
+	<span th:text="${#dates.month(key)}"></span>-
+	<hr/>
+	<span th:text="${#dates.day(key)}"></span>
+</body>
+</html>

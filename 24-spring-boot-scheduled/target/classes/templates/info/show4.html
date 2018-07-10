@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Age</th>
+		</tr>
+		<tr th:each="item : ${map}">
+			<td th:text="${item}"></td>
+		</tr>
+	</table>
+	<hr/>
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Age</th>
+		</tr>
+		<tr th:each="item : ${map}">
+			<td th:each="entry:${item}" th:text="${entry.value.id}" ></td>
+			<td th:each="entry:${item}" th:text="${entry.value.name}"></td>
+			<td th:each="entry:${item}" th:text="${entry.value.age}"></td>
+		</tr>
+	</table>
+	<hr/>
+	<!--
+		本人觉得应该这样写
+	-->
+	<table border="1">
+		<tr>
+			<th></th>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Age</th>
+		</tr>
+		<tr th:each="item : ${map}">
+			<td th:text="${item.key}"></td>
+			<td th:text="${item.value.id}" ></td>
+			<td th:text="${item.value.name}"></td>
+			<td th:text="${item.value.age}"></td>
+		</tr>
+	</table>
+</body>
+</html>

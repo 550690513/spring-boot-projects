@@ -35,6 +35,7 @@
 		<module>21-spring-boot-jpa</module>
 		<module>22-spring-boot-ehcache</module>
 		<module>23-spring-boot-redis</module>
+		<module>24-spring-boot-scheduled</module>
 	</modules>
 
 </project>
