@@ -36,6 +36,7 @@
 		<module>22-spring-boot-ehcache</module>
 		<module>23-spring-boot-redis</module>
 		<module>24-spring-boot-scheduled</module>
+		<module>25-spring-boot-quartz</module>
 	</modules>
 
 </project>
