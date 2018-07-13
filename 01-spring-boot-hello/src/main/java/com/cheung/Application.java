@@ -13,11 +13,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 // Spring Boot启动类的注解
 @SpringBootApplication
-public class SpringBootDemoApplication {
+public class Application {
 
 	// Spring Boot启动类执行方法入口
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemoApplication.class, args);
+		SpringApplication.run(Application.class, args);
 
 	}
 
